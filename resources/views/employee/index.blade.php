@@ -16,7 +16,7 @@
     <!-- Main content -->
     <div class="content">
         <div class="container-fluid">
-            <a href="#" class="btn btn-info">Add New Employee</a> <br> <br>
+            <a href="employee.create" class="btn btn-info">Add New Employee</a> <br> <br>
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="card">
@@ -35,15 +35,17 @@
                                     </thead>
                                     <tbody  >
                                         <tr>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
+                                            @Foreach ($employees as $employee)
+                                            <td>{{$employee->fname}}</td>
+                                            <td>{{$employee->mname}}</td>
+                                            <td>{{$employee->lname}}</td>
+                                            <td>{{$employee->add}}</td>
+                                            <td>{{$employee->dob}}</td>
+                                            <td>{{$employee->contact}}</td>
                                             <td> 
-                                                <a href="#" class="btn btn-primary btn-md active" role="button" aria-pressed="true">Edit</a>
-                                                <a href="#" class="btn btn-danger btn-md active" role="button" aria-pressed="true">Delete</a>
+                                                @endforeach
+                                                <a href="employee.edit" class="btn btn-primary btn-md active" role="button" aria-pressed="true">Edit</a>
+                                                <a href="employee.destroy" class="btn btn-danger btn-md active" role="button" aria-pressed="true">Delete</a>
                                             </td>
                                         </tr>
                                     </tbody>
@@ -55,5 +57,5 @@
             </div>
         </div><!-- /.container-fluid -->
     </div>
-    <!-- /.content -->
-@endsection
+    <!-- /.content --> 
+     @endsection
