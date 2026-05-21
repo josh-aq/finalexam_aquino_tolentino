@@ -17,7 +17,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::middleware('auth')->group(function () {
     Route::view('about', 'about')->name('about');
-    
+
     Route::get('employee', [App\Http\Controllers\employeecontroller::class, 'index']);
     Route::post('employee', [App\Http\Controllers\employeecontroller::class, 'index']);
 
@@ -27,6 +27,10 @@ Route::middleware('auth')->group(function () {
     // Employee routes //mag push ka nga reply ka dito kung na access mo na
     Route::get('employee', [\App\Http\Controllers\employeecontroller::class, 'index'])->name('employee.index');
     Route::get('employee',[\App\Http\Controllers\employeecontroller::class, 'create'])->name('employee.create');
+    Route::get('employee/{id}', [\App\Http\Controllers\employeecontroller::class, 'edit'])->name('employee.edit');
+    Route::put('employee/{id}', [\App\Http\Controllers\employeecontroller::class, 'update'])->name('employee.update');
+    Route::delete('employee/{id}', [\App\Http\Controllers\employeecontroller::class, 'destroy'])->name('employee.destroy');
+
     //Profile routes
     Route::get('profile', [\App\Http\Controllers\ProfileController::class, 'show'])->name('profile.show');
     Route::put('profile', [\App\Http\Controllers\ProfileController::class, 'update'])->name('profile.update');

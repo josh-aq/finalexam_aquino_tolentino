@@ -42,10 +42,14 @@
                                             <td>{{$employee->add}}</td>
                                             <td>{{$employee->dob}}</td>
                                             <td>{{$employee->contact}}</td>
-                                            <td> 
+                                            <td>
                                                 @endforeach
-                                                <a href="employee.edit" class="btn btn-primary btn-md active" role="button" aria-pressed="true">Edit</a>
-                                                <a href="employee.destroy" class="btn btn-danger btn-md active" role="button" aria-pressed="true">Delete</a>
+                                                <a href="{{ route('employee.edit',$employee->id) }}" class="btn btn-primary btn-md active" role="button" aria-pressed="true">Edit</a>
+                                                <form action="{{ route('employee.destroy', $employee->id) }}" method="POST" style="display:inline-block;">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="submit" class="btn btn-danger btn-md active" role="button" aria-pressed="true">Delete</button>
+                                                </form>
                                             </td>
                                         </tr>
                                     </tbody>
@@ -57,5 +61,5 @@
             </div>
         </div><!-- /.container-fluid -->
     </div>
-    <!-- /.content --> 
+    <!-- /.content -->
      @endsection
