@@ -5,25 +5,46 @@ use Illuminate\Support\Fascades\DB;
 use Response;
 use Illuminate\Http\Request;
 use App\Models\employee;
+use App\Models\employeemngt;
 
 class employeecontroller extends Controller
 {
     public function index()
+<<<<<<< HEAD
     {
         $employee = employeemngt::all (findorfail);
         return view ('employee.index',compact(employees));
+=======
+    {   
+        $employees = employeemngt::all();
+        return view ('employee.index',compact('employees'));
+>>>>>>> acea3270185dfb308bab7dc6a35796fb570a688c
     }
 
 
     public function create()
     {
+<<<<<<< HEAD
+=======
+          
+        return view ('employee.create');
+>>>>>>> acea3270185dfb308bab7dc6a35796fb570a688c
 
     }
 
 
     public function store(Request $request)
     {
-    //
+    $request ->validate([
+        'fname'=> 'required',
+         'mname'=> 'required',
+          'lname'=> 'required',
+           'add'=> 'required',
+            'dob'=> 'required',
+             'contact'=> 'required'
+             
+
+    ]);
     }
 
     public function edit( int $id)

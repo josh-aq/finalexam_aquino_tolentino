@@ -38,6 +38,17 @@
                 </a>
             </li>
 
+
+              <li class="nav-item">
+                <a href="{{ route('employee.create') }}" class="nav-link">
+                    <i class="nav-icon far fa-address-card"></i>
+                    <p>
+                        {{ __('Employee 
+                        Create') }}
+                    </p>
+                </a>
+            </li>
+
             <li class="nav-item">
                 <a href="{{ route('about') }}" class="nav-link">
                     <i class="nav-icon far fa-address-card"></i>

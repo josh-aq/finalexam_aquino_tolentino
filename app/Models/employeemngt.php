@@ -6,7 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class employeemngt extends Model
 {
-    use HasFactory;
+protected $table  ='employeemngt';
+
 
          protected $fillable = [
         'fname',
