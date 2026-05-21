@@ -10,13 +10,14 @@ class employeecontroller extends Controller
 {
     public function index()
     {   
-        return view ('employee.index');
+        $employee = employeemngt::all (findorfail);
+        return view ('employee.index',compact(employees));
     }
 
 
     public function create()
     {
-        //
+         
     }
 
 

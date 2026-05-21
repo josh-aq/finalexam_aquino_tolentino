@@ -1,13 +1,4 @@
-
-
-
-
-
 {
-// mag push ka nga reply ka dito kung nakita mo na 
-    
-
-
     "name": "laravel/laravel",
     "type": "project",
     "description": "The skeleton application for the Laravel framework.",
