@@ -33,9 +33,12 @@ class employeecontroller extends Controller
            'add'=> 'required',
             'dob'=> 'required',
              'contact'=> 'required'
+
              
 
     ]);
+    employeemngt::create($request->all());
+    return redirect()->route('employee.index');
     }
 
     public function edit( int $id)
