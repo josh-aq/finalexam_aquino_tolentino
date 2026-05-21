@@ -20,6 +20,7 @@ return new class extends Migration
                   $table->string('add');
                     $table->date('dob');
                       $table->string('contact');
+                       $table->timestamps();
         });
     
     }

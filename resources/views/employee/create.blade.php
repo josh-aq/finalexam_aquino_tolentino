@@ -34,7 +34,7 @@
                         </div>
                         <div class="form-group col-6">
                           <label for="exampleInputPassword1">Middlename</label>
-                          <input type="text" class="form-control g-2" id="midname" name="mname" placeholder="Enter your Middlename" require>
+                          <input type="text" class="form-control g-2" id="mname" name="mname" placeholder="Enter your Middlename" require>
                         </div>
                         @error('lname') <span class="text-danger">{{$message}}</span>@enderror
                         @error('midname') <span class="text-danger">{{$message}}</span> @enderror  
@@ -45,7 +45,7 @@
                           @error('fname') <span class="text-danger">{{$message}}</span> @enderror
                         <div class="form-group col-12">
                           <label for="exampleInputPassword1">Address</label>
-                          <input type="text" class="form-control" id="address" name="address" placeholder="House No. Street Name, Brgy, City">
+                          <input type="text" class="form-control" id="add" name="add" placeholder="House No. Street Name, Brgy, City">
                         </div>
                           @error('address') <div class="text-danger">{{ $message }}</div> @enderror
                         <div class="form-group col-6">
