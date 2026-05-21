@@ -55,7 +55,7 @@
                         </div>
                            <div class="form-group col-6">
                           <label for="exampleInputPassword1">contact</label>
-                          <input type="date" class="form-control" id="contact" name="contact" placeholder="contact"> <br>
+                          <input type="text" class="form-control" id="contact" name="contact" placeholder="contact"> <br>
                           @error('contact') <div class="text-danger">{{ $message }}</div> @enderror
                         </div>
                         <div class="form-group col-6">
