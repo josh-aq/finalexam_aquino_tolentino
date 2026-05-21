@@ -24,7 +24,7 @@ Route::middleware('auth')->group(function () {
 
     Route::get('users', [\App\Http\Controllers\UserController::class, 'index'])->name('users.index');
 
-    // Employee routes
+    // Employee routes //mag push ka nga reply ka dito kung na access mo na
     Route::get('employee', [\App\Http\Controllers\employeecontroller::class, 'index'])->name('employee.index');
 
     
