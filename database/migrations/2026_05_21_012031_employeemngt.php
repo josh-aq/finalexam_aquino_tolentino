@@ -15,11 +15,11 @@ return new class extends Migration
         Schema::create('employeemngt', function (Blueprint $table) {
             $table->id()->primary();
             $table->string('fname');
-              $table->string(mname);
-                $table->string(lname);
-                  $table->string(add);
-                    $table->date(dob);
-                      $table->int(contact);
+              $table->string('mname');
+                $table->string('lname');
+                  $table->string('add');
+                    $table->date('dob');
+                      $table->string('contact');
         });
     
     }

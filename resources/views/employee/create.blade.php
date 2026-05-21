@@ -53,6 +53,11 @@
                           <input type="date" class="form-control" id="dob" name="dob" placeholder="YYYY-MM-DD"> <br>
                           @error('dob') <div class="text-danger">{{ $message }}</div> @enderror
                         </div>
+                           <div class="form-group col-6">
+                          <label for="exampleInputPassword1">contact</label>
+                          <input type="date" class="form-control" id="contact" name="contact" placeholder="contact"> <br>
+                          @error('contact') <div class="text-danger">{{ $message }}</div> @enderror
+                        </div>
                         <div class="form-group col-6">
                         </div>
                         <button type="submit" class="btn btn-success col-6 m-auto">Submit Student Record</button>
