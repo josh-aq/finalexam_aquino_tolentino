@@ -1,10 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-use Illuminate\Support\Fascades\DB;
+use Illuminate\Support\Facades\DB;
 use Response;
 use Illuminate\Http\Request;
-use App\Models\employee;
 use App\Models\employeemngt;
 
 class employeecontroller extends Controller
@@ -41,16 +40,32 @@ class employeecontroller extends Controller
     return redirect()->route('employee.index');
     }
 
-    public function edit( int $id)
+    public function edit(int $id)
     {
-        //
+        $employee = employeemngt::findOrFail($id);
+        return view('employee.edit', compact('employee'));
     }
 
-    public function update(Request $request, int $id) {
-        //
+    public function update(Request $request, int $id)
+    {
+        $request->validate([
+            'fname' => 'required',
+            'mname' => 'required',
+            'lname' => 'required',
+            'add' => 'required',
+            'dob' => 'required',
+            'contact' => 'required'
+        ]);
+
+        $employee = employeemngt::findOrFail($id);
+        $employee->update($request->all());
+        return redirect()->route('employee.index')->with('success', 'Employee updated successfully!');
     }
 
-    public function destroy(int $id){
-      //
+    public function destroy(int $id)
+    {
+        $employee = employeemngt::findOrFail($id);
+        $employee->delete();
+        return redirect()->route('employee.index')->with('success', 'Employee deleted successfully!');
     }
 }

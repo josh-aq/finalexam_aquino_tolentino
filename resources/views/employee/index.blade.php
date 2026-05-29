@@ -34,26 +34,28 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        @foreach ($employees as $employee)
+                                    @forelse ($employees as $employee)
+                                        <tr>
+                                            <td>{{ $employee->id }}</td>
                                             <td>{{ $employee->fname }}</td>
-                                            <td>{{ $employee->mname }}</td>
                                             <td>{{ $employee->lname }}</td>
+                                            <td>{{ $employee->mname }}</td>
                                             <td>{{ $employee->add }}</td>
                                             <td>{{ $employee->dob }}</td>
-                                            <td>{{ $employee->contact }}</td>
                                             <td>
-                                        @endforeach
-                                        <a href="" class="btn btn-primary btn-md active" role="button"
-                                            aria-pressed="true">Edit</a>
-                                        <form action="" method="POST" style="display:inline-block;">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit" class="btn btn-danger btn-md active" role="button"
-                                                aria-pressed="true">Delete</button>
-                                        </form>
-                                        </td>
-                                    </tr>
+                                                <a href="{{ route('employee.edit', $employee->id) }}" class="btn btn-primary btn-sm">Edit</a>
+                                                <form action="{{ route('employee.destroy', $employee->id) }}" method="POST" style="display:inline-block;">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')">Delete</button>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                    @empty
+                                        <tr>
+                                            <td colspan="7" class="text-center">No employees found. <a href="{{ route('employee.create') }}">Create one</a></td>
+                                        </tr>
+                                    @endforelse
                                 </tbody>
                             </table>
                         </div>
